@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { AuthMiddleware } from './auth/auth.middleware';
 import { AuthService } from './auth/auth.service';
 import { KeycloakService } from './keycloak/keycloak.service';
+import { ProductsController } from './products/products.controller';
+import { ProtectedController } from './protected/protected.controller';
 
 @Module({
   imports: [],
-  controllers: [AppController],
+  controllers: [AppController, ProductsController, ProtectedController],
   providers: [AppService, AuthService, KeycloakService],
 })
 export class AppModule {
